@@ -1,0 +1,596 @@
+/* --- Premium Dark Industrial Resets --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* This is the magic line that stops horizontal side-scrolling */
+    position: relative;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0b0d0f; /* Deep Zinc / Onyx Garage Black */
+    color: #e2e8f0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+/* --- Premium Navigation Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background-color: rgba(11, 13, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    color: #ffb703; /* Amber Accent */
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffb703;
+}
+
+.btn-nav {
+    background-color: #ffb703;
+    color: #0b0d0f !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-nav:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- Slider Hero Section --- */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    overflow: hidden;
+}
+
+.hero-slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 50% auto; /* Forces a wider landscape crop instead of zooming deep */
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0b0d0f 50%, rgba(11, 13, 15, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-tagline {
+    color: #ffb703;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #ffb703;
+    color: #0b0d0f;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- Services (Engine Tool Texture Overlay) --- */
+.services {
+    padding: 80px 6%;
+    position: relative;
+    background-color: #111418;
+    /* Subtly overlays stylized tools in background */
+    background-image: linear-gradient(rgba(17, 20, 24, 0.94), rgba(17, 20, 24, 0.94)), 
+                      url(images/services-background.jpg);
+    background-size: cover 50%;
+    background-attachment: fixed;
+}
+
+.section-subtitle {
+    color: #ffb703;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.services h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background-color: #161a1f;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffb703;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .card-image-wrapper img {
+    transform: scale(1.08);
+}
+
+.card-icon-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffb703;
+    color: #0b0d0f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 35px 25px 25px 25px;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* --- Mechanical Mid-Banner --- */
+.parallax-banner {
+    position: relative;
+    padding: 120px 8%;
+    background: url('https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?q=80&w=1920') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 13, 15, 0.9);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* --- Booking & Contact (Dark Steel Grid Theme) --- */
+.contact {
+    padding: 100px 8%;
+    background-color: #0b0d0f;
+    background-image: linear-gradient(rgba(11, 13, 15, 0.95), rgba(11, 13, 15, 0.95)), 
+                      url('images/contact-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contact h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.contact p {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #12161b;
+    padding: 45px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+form input, form textarea {
+    width: 100%;
+    background-color: #1a1f26;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 16px;
+    font-size: 15px;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 20px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #ffb703;
+    box-shadow: 0 0 8px rgba(255, 183, 3, 0.3);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #ffb703;
+    color: #0b0d0f;
+    border: none;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #07080a;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 70px 8% 30px 8%;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-brand { flex: 2; min-width: 250px; }
+.footer-hours, .footer-contact { flex: 1; min-width: 220px; }
+
+footer h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 13px;
+    color: #475569;
+}
+
+@media (max-width: 768px) {
+    .form-row { flex-direction: column; gap: 0; }
+    .hero-content h1 { font-size: 40px; }
+}
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Keeps the original colors intact */
+    display: inline-block;
+}
+
+.logo-link:hover {
+    opacity: 0.9; /* Subtle hint that it's clickable when hovered */
+}
+
+/* --- Global Responsive and Typography Scaling --- */
+@media (max-width: 1024px) {
+    header { padding: 18px 5%; }
+    .hero { padding: 0 5%; }
+    .services, .contact, .parallax-banner { padding: 80px 5%; }
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 75%; /* Slightly narrow it down for an elegant look */
+        max-width: 300px;
+        height: 100vh;
+        background-color: #111418;
+        z-index: 1001;
+        /* Ensure it doesn't cause paint layout issues */
+        box-sizing: border-box; 
+    }
+   .menu-toggle {
+        display: flex !important; /* Forces it to show on mobile layouts */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 26px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 1001;
+        position: relative;
+    }
+    
+    .menu-toggle span {
+        width: 100%;
+        height: 3px; /* Slightly thicker for easy touch-accuracy */
+        background-color: #ffb703; /* Striking Amber so it pops on dark headers */
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    /* Toggle Cross-Effect transformation when active */
+    .menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #ffb703;
+    }
+    .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #ffb703;
+    }
+
+    /* --- Full-Screen Sliding Mobile Nav Menu --- */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden completely off-screen by default */
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: #111418;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px 40px;
+        gap: 25px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.is-active {
+        right: 0; /* Slide out smooth on screen */
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 18px;
+        width: 100%;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .btn-nav {
+        text-align: center;
+        background-color: #ffb703 !important;
+        color: #0b0d0f !important;
+        margin-top: 15px;
+        border-bottom: none;
+    }
+
+    /* --- Hero Presentation Scaling --- */
+    /* --- MOBILE HERO SLIDESHOW HEIGHT REPAIR --- */
+ .hero {
+        height: 60vh !important; /* Lower vertical height means the image doesn't have to scale up as much */
+        min-height: 420px;       /* Keeps it perfectly framed for text and buttons */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 6%;
+        position: relative;
+    }
+
+    .hero-slides {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .slide {
+        background-size: 120% auto !important; /* Pulls the zoom way back instead of stretching to cover */
+        background-position: center top !important; /* Focuses on the prime action area of your pictures */
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Keep text readable and punchy over the newly visible images */
+    .hero-content {
+        padding-top: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    /* --- Grids and Form Re-alignment --- */
+    .services-grid {
+        grid-template-columns: 1fr; /* Force cards into clean single-column presentation */
+        gap: 30px;
+    }
+
+    .contact-container {
+        padding: 25px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    footer .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+main, section {
+    width: 100%;
+    flex-shrink: 0;
+}
